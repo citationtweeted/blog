@@ -13,8 +13,8 @@ JSON_FEED='{
     "version": "https://jsonfeed.org/version/1",
     "title": "[citation tweeted]",
     "description": "Yet another geeky person’s unsolicited opinions on technology, politics, and life.",
-    "home_page_url": "citationtweeted.com",
-    "feed_url": "citationtweeted.com/feed.json",
+    "home_page_url": "http://citationtweeted.com",
+    "feed_url": "http://citationtweeted.com/feed.json",
     "items": ['
 
 for ENTRY in ${ENTRIES}; do
@@ -37,9 +37,10 @@ for ENTRY in ${ENTRIES}; do
 #    JSON Feed
     JSON_FEED="${JSON_FEED}
     {
-        \"id\": \"citationtweeted.com/entries/${ENTRY}.html\",
+        \"id\": \"http://citationtweeted.com/entries/${ENTRY}.html\",
+        \"title\": \"${TITLE:1}\",
         \"content_html\": \"${ENTRY_HTML}\",
-        \"url\": \"citationtweeted.com/entries/${ENTRY}.html\"
+        \"url\": \"http://citationtweeted.com/entries/${ENTRY}.html\"
     }
     "
 
