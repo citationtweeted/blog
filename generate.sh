@@ -31,7 +31,7 @@ for ENTRY in ${ENTRIES}; do
     ENTRY_HTML=$(cmark ${ENTRY})
     echo ${ENTRY_HTML} >> "${ENTRY}.html"
     if [ ${PREVIOUS} != "" ]; then
-        echo "<hr><a href='../${PREVIOUS}.html'>Previous post</a>" >> "${ENTRY}.html"
+        echo "<a href='../${PREVIOUS}.html'>Previous post</a>" >> "${ENTRY}.html"
         JSON_FEED="${JSON_FEED},"
     fi
 #    JSON Feed
