@@ -1,0 +1,17 @@
+header {
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+header > h1 > a, header > h1 > a:visited {
+    text-decoration: none;
+    font-style: italic;
+    color: blue;
+}
+
+body {
+    font-family: "Georgia", serif;
+}
+
+p {
+    max-width: 50em;
+}
