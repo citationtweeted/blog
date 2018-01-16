@@ -22,7 +22,7 @@ for ENTRY in ${ENTRIES}; do
 
 #    Handle page title
     TITLE=$(head -n 1 ${ENTRY})
-    echo "${TITLE:1} [citation tweeted]" >> "${ENTRY}.html"  # Strip initial # from title
+    echo "${TITLE:2} [citation tweeted]" >> "${ENTRY}.html"  # Strip initial # from title
 #    Generate list of blog entries for home page
     LIST="<li><a href='${ENTRY}.html'>$(basename ${ENTRY%%.*}) ${TITLE:1}</a></li>
     ${LIST}"
