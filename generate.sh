@@ -22,9 +22,10 @@ for ENTRY in ${ENTRIES}; do
 
 #    Handle page title
     TITLE=$(head -n 1 ${ENTRY})
-    echo "${TITLE:2} [citation tweeted]" >> "${ENTRY}.html"  # Strip initial # from title
+    TITLE=${TITLE:2}
+    echo "${TITLE} [citation tweeted]" >> "${ENTRY}.html"  # Strip initial # from title
 #    Generate list of blog entries for home page
-    LIST="<li><a href='${ENTRY}.html'>$(basename ${ENTRY%%.*}) ${TITLE:1}</a></li>
+    LIST="<li><a href='${ENTRY}.html'>$(basename ${ENTRY%%.*}) ${TITLE}</a></li>
     ${LIST}"
     cat header2.html >> "${ENTRY}.html"
 
@@ -38,8 +39,8 @@ for ENTRY in ${ENTRIES}; do
     JSON_FEED="${JSON_FEED}
     {
         \"id\": \"http://citationtweeted.com/entries/${ENTRY}.html\",
-        \"title\": \"${TITLE:1}\",
-        \"content_html\": \"${ENTRY_HTML}\",
+        \"title\": \"${TITLE//\"/&quot;}\",
+        \"content_html\": \"${ENTRY_HTML//\"/&quot;}\",
         \"url\": \"http://citationtweeted.com/entries/${ENTRY}.html\"
     }
     "
