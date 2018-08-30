@@ -16,3 +16,7 @@ body {
 p {
     max-width: 50em;
 }
+
+.feedicon img {
+    width: 70px;
+}
