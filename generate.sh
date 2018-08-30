@@ -42,7 +42,7 @@ for ENTRY in ${ENTRIES}; do
         \"id\": \"http://citationtweeted.com/entries/${ENTRY}.html\",
         \"title\": \"${TITLE//\"/\\\"}\",
         \"content_html\": \"${ENTRY_HTML_NO_TITLE//\"/\\\"}\",
-        \"url\": \"http://citationtweeted.com/entries/${ENTRY}.html\"
+        \"url\": \"http://citationtweeted.com/${ENTRY}.html\"
     }
     "
 
