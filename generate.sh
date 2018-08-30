@@ -39,8 +39,8 @@ for ENTRY in ${ENTRIES}; do
     JSON_FEED="${JSON_FEED}
     {
         \"id\": \"http://citationtweeted.com/entries/${ENTRY}.html\",
-        \"title\": \"${TITLE//\"/&quot;}\",
-        \"content_html\": \"${ENTRY_HTML//\"/&quot;}\",
+        \"title\": \"${TITLE//\"/\\\"}\",
+        \"content_html\": \"${ENTRY_HTML//\"/\\\"}\",
         \"url\": \"http://citationtweeted.com/entries/${ENTRY}.html\"
     }
     "
