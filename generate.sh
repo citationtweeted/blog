@@ -12,7 +12,7 @@ PREVIOUS=""
 JSON_FEED='{
     "version": "https://jsonfeed.org/version/1",
     "title": "[citation tweeted]",
-    "description": "Yet another geeky person’s unsolicited opinions on technology, politics, and life.",
+    "description": "Yet another geeky person'"'"'s unsolicited opinions on technology, politics, and life.",
     "home_page_url": "http://citationtweeted.com",
     "feed_url": "http://citationtweeted.com/feed.json",
     "items": ['
@@ -30,6 +30,7 @@ for ENTRY in ${ENTRIES}; do
     cat header2.html >> "${ENTRY}.html"
 
     ENTRY_HTML=$(cmark ${ENTRY})
+    ENTRY_HTML_NO_TITLE=$(tail -n +2 ${ENTRY} | cmark)
     echo ${ENTRY_HTML} >> "${ENTRY}.html"
     if [ ${PREVIOUS} != "" ]; then
         echo "<a href='../${PREVIOUS}.html'>Previous post</a>" >> "${ENTRY}.html"
@@ -40,7 +41,7 @@ for ENTRY in ${ENTRIES}; do
     {
         \"id\": \"http://citationtweeted.com/entries/${ENTRY}.html\",
         \"title\": \"${TITLE//\"/\\\"}\",
-        \"content_html\": \"${ENTRY_HTML//\"/\\\"}\",
+        \"content_html\": \"${ENTRY_HTML_NO_TITLE//\"/\\\"}\",
         \"url\": \"http://citationtweeted.com/entries/${ENTRY}.html\"
     }
     "
