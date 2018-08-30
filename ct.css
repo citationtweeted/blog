@@ -15,6 +15,7 @@ body {
 
 p {
     max-width: 50em;
+    text-align: justify;
 }
 
 .feedicon img {
